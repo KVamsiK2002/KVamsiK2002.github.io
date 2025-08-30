@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a; /* A very dark gray, almost black */
+            color: #e5e7eb; /* Light gray for text */
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #34d399, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(23, 23, 23, 0.6); /* Semi-transparent dark background */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .skill-icon {
+            filter: grayscale(100%) opacity(60%);
+            transition: all 0.3s ease;
+        }
+        .skill-icon:hover {
+            filter: grayscale(0%) opacity(100%);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-lg border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-wider gradient-text">YN.</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
+                <a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-300">Projects</a>
+                <a href="#skills" class="text-gray-300 hover:text-white transition-colors duration-300">Skills</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+             <a href="#about" class="block text-gray-300 hover:text-white transition-colors duration-300">About</a>
+             <a href="#projects" class="block text-gray-300 hover:text-white transition-colors duration-300">Projects</a>
+             <a href="#skills" class="block text-gray-300 hover:text-white transition-colors duration-300">Skills</a>
+             <a href="#contact" class="block text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 pt-24 md:pt-32">
+        <!-- Hero Section -->
+        <section id="home" class="text-center min-h-[70vh] flex flex-col justify-center items-center">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
+                Hi, I'm <span class="gradient-text">Your Name</span>.
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-400 max-w-3xl">
+                <!-- EDIT THIS: Change this to your title or a short, catchy bio -->
+                I build beautiful and responsive web applications.
+            </p>
+            <a href="#contact" class="mt-8 px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+                Get In Touch
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 lg:py-32">
+            <div class="grid md:grid-cols-5 gap-10 items-center">
+                <div class="md:col-span-2">
+                    <!-- EDIT THIS: Change the image URL to a photo of you -->
+                    <img src="https://placehold.co/400x400/171717/34d399?text=Your\nPhoto" alt="A photo of Your Name" class="rounded-lg shadow-2xl w-full">
+                </div>
+                <div class="md:col-span-3">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">About Me</h2>
+                    <!-- EDIT THIS: Write a few paragraphs about yourself -->
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Hello! I'm a passionate developer with a love for creating clean, intuitive, and high-performance digital experiences. My journey into tech started with a simple "Hello, World!" and has since grown into a full-fledged passion for building things for the web.
+                    </p>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        I specialize in front-end development, but I'm always eager to learn new technologies and expand my skill set. When I'm not coding, you can find me exploring the outdoors, reading a good book, or trying out new coffee shops.
+                    </p>
+                    <a href="#projects" class="text-blue-400 hover:underline">View my work &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 lg:py-32">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold gradient-text">My Projects</h2>
+                <p class="text-gray-400 mt-2">Here are a few things I've built.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- EDIT THIS: Add your projects here. Duplicate the card for more projects. -->
+                
+                <!-- Project Card 1 -->
+                <div class="glass-card rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/171717/60a5fa?text=Project+One" alt="Project 1 Screenshot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project One Title</h3>
+                        <p class="text-gray-400 mb-4">A brief description of the project, the technologies used, and what you learned.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-400 hover:underline">Live Demo</a>
+                            <a href="#" class="text-gray-400 hover:underline">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="glass-card rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/171717/34d399?text=Project+Two" alt="Project 2 Screenshot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Two Title</h3>
+                        <p class="text-gray-400 mb-4">A brief description of the project, the technologies used, and what you learned.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-400 hover:underline">Live Demo</a>
+                            <a href="#" class="text-gray-400 hover:underline">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="glass-card rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/171717/a78bfa?text=Project+Three" alt="Project 3 Screenshot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Three Title</h3>
+                        <p class="text-gray-400 mb-4">A brief description of the project, the technologies used, and what you learned.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-400 hover:underline">Live Demo</a>
+                            <a href="#" class="text-gray-400 hover:underline">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 lg:py-32">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold gradient-text">My Tech Stack</h2>
+                <p class="text-gray-400 mt-2">Technologies I love to work with.</p>
+            </div>
+            <!-- EDIT THIS: Add or remove skills as needed. Find icons on sites like simpleicons.org -->
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                 <!-- HTML5 -->
+                <div class="text-center">
+                    <img src="https://cdn.simpleicons.org/html5/white" alt="HTML5" class="h-16 w-16 mx-auto skill-icon">
+                    <p class="mt-2 text-sm text-gray-400">HTML5</p>
+                </div>
+                 <!-- CSS3 -->
+                <div class="text-center">
+                    <img src="https://cdn.simpleicons.org/css3/white" alt="CSS3" class="h-16 w-16 mx-auto skill-icon">
+                    <p class="mt-2 text-sm text-gray-400">CSS3</p>
+                </div>
+                 <!-- JavaScript -->
+                <div class="text-center">
+                    <img src="https://cdn.simpleicons.org/javascript/white" alt="JavaScript" class="h-16 w-16 mx-auto skill-icon">
+                    <p class="mt-2 text-sm text-gray-400">JavaScript</p>
+                </div>
+                 <!-- React -->
+                <div class="text-center">
+                    <img src="https://cdn.simpleicons.org/react/white" alt="React" class="h-16 w-16 mx-auto skill-icon">
+                    <p class="mt-2 text-sm text-gray-400">React</p>
+                </div>
+                 <!-- Node.js -->
+                 <div class="text-center">
+                    <img src="https://cdn.simpleicons.org/nodedotjs/white" alt="Node.js" class="h-16 w-16 mx-auto skill-icon">
+                    <p class="mt-2 text-sm text-gray-400">Node.js</p>
+                </div>
+                 <!-- Tailwind CSS -->
+                <div class="text-center">
+                    <img src="https://cdn.simpleicons.org/tailwindcss/white" alt="Tailwind CSS" class="h-16 w-16 mx-auto skill-icon">
+                    <p class="mt-2 text-sm text-gray-400">Tailwind CSS</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 lg:py-32 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold gradient-text">Get In Touch</h2>
+            <p class="text-gray-400 mt-4 max-w-xl mx-auto">
+                I'm currently open to new opportunities. If you have a project in mind or just want to say hello, feel free to reach out!
+            </p>
+            <!-- EDIT THIS: Change the email address -->
+            <a href="mailto:your.email@example.com" class="mt-8 inline-block px-8 py-3 bg-emerald-500 text-white font-semibold rounded-lg shadow-lg hover:bg-emerald-600 transition-all duration-300 transform hover:scale-105">
+                Say Hello
+            </a>
+
+            <!-- Social Media Icons -->
+            <div class="mt-12 flex justify-center space-x-6">
+                <!-- EDIT THIS: Replace '#' with your social media profile URLs -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-transform duration-300 hover:scale-125">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.286 3.437 7.78 7.807 7.994.57.105.777-.247.777-.548 0-.27-.01-1.178-.015-2.14-3.338.724-4.042-1.61-4.042-1.61-.518-1.317-1.264-1.668-1.264-1.668-1.034-.707.078-.693.078-.693 1.143.08 1.745 1.173 1.745 1.173 1.014 1.738 2.657 1.235 3.301.944.103-.734.396-1.235.72-1.518-2.512-.285-5.155-1.255-5.155-5.592 0-1.238.442-2.25 1.17-3.045-.117-.286-.507-1.44.11-3.003 0 0 .95-.303 3.108 1.164.902-.25 1.87-.375 2.835-.38.965.005 1.933.13 2.835.38 2.158-1.467 3.105-1.164 3.105-1.164.618 1.562.228 2.716.11 3.003.73.795 1.168 1.807 1.168 3.045 0 4.349-2.647 5.304-5.168 5.58.407.35.77.94.77 1.895 0 1.365-.012 2.465-.012 2.8 0 .304.204.658.78.548A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-transform duration-300 hover:scale-125">
+                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h11.25v-9.3H9.79V11.1h3.23V8.74c0-3.18 1.9-4.92 4.8-4.92 1.36 0 2.83.24 2.83.24v3.02h-1.5c-1.56 0-2 .93-2 1.87v2.13h3.36l-.53 3.6H17.2v9.3h5.03c.97 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0z"/></svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-transform duration-300 hover:scale-125">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.93 4.132a9.12 9.12 0 01-2.6.713 4.545 4.545 0 002-2.5 9.07 9.07 0 01-2.875 1.098 4.534 4.534 0 00-7.724 4.132A12.86 12.86 0 013.2 5.02a4.533 4.533 0 001.4 6.05A4.503 4.503 0 012.5 10.6v.056a4.532 4.532 0 003.636 4.444 4.53 4.53 0 01-2.043.077 4.533 4.533 0 004.233 3.145 9.096 9.096 0 01-5.63 1.94c-.366 0-.728-.02-.1087-.063a12.81 12.81 0 006.94 2.033c8.328 0 12.88-6.904 12.88-12.88 0-.196-.005-.39-.014-.583a9.182 9.182 0 002.26-2.348z"/></svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+             <!-- EDIT THIS: Change "Your Name" and the year -->
+            <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple script for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
 
